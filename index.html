@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link href='https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700' rel='stylesheet' type='text/css'>
+	<title>The bite of the knife</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript">
+
+
+$(function () {
+	if ('ontouchstart' in document.documentElement) {
+		$("body").addClass("touch");
+	} else {
+		return;
+	}
+
+	function close () {
+		$(".show-image").removeClass("show-image");
+	}
+
+	$(document).on("touchstart", close);
+
+	$("em span").on("touchstart", function (event) {
+		event.stopPropagation();
+		close();
+		$(this).closest("em").addClass("show-image");
+	});
+});
+
+
+	</script>
+	<style type="text/css">
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+	background-color: #F8F8FF;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Start our own CSS */
+
+* {
+	/* http://www.w3schools.com/cssref/css3_pr_box-sizing.asp */
+	box-sizing: border-box;
+}
+
+
+body {
+	font-family: 'Libre Baskerville', serif;
+}
+
+em {
+	font-style: italic;
+}
+
+a,
+#text em {
+	text-decoration: underline;
+	color: #201F1E;
+}
+
+a:visited {
+	color: #201F1E;
+}
+
+a:hover {
+	color: #626261;
+}
+
+h1 {
+	font-style: italic;
+	font-size: 21px;
+	line-height: 30px;
+	margin-bottom: 30px;
+}
+
+.keyline-bottom:after,
+.keyline-top:before {
+	content: '';
+	display: block;
+ 	width: 24px;
+	height: 2px;
+	background-color: black;
+	margin-top: 10px;
+}
+
+.keyline-top:before {
+	margin-bottom: 18px;
+	margin-top: 36px;
+}
+
+#page {
+	background: url('images/carbon_steel_background.jpg');
+	max-width: 860px;
+	margin: 80px auto;	
+	padding: 16px;
+	color: #201F1E;
+}
+
+#page-inner {
+	background-color: #f2f3f0;
+	padding: 80px;
+}
+
+p {
+	font-size: 18px;
+	line-height: 28px;
+	margin-bottom: 28px;
+	text-indent: 52px;
+	position: relative;
+}
+
+p:first-child {
+	text-indent: 0px;
+}
+
+#img-cutting-tools img {
+	top: -30%;
+	left: -5%;
+	max-width: 110%;
+}
+
+#img-stone-axe img {
+	top: -35%;
+	left: -3%;
+	max-width: 105%;
+}
+
+#img-forks img {
+	top: -20%;
+	left: -3%;
+	max-width: 105%;
+}
+
+#img-teeth img {
+	top: -40%;
+	left: -6%;
+	max-width: 110%;
+}
+
+#img-hands img {
+	top: -42%;
+	left: -6%;
+	max-width: 112%;
+}
+
+#img-chopsticks img {
+	top: -28%;
+	left: -3%;
+	max-width: 105%;
+}
+
+em img {
+	position: absolute;	
+	height: auto;
+	pointer-events: none;
+	visibility: hidden;
+ 	opacity: 0;
+	transition: visibility 0s, opacity 0.2s linear;
+	z-index: 1;
+}
+
+/* https://developer.mozilla.org/en/docs/Web/CSS/Adjacent_sibling_selectors */
+.show-image img,
+body:not(.touch) em span:hover + img {
+	visibility: visible;
+	opacity: 1;
+	blend-mode: multiply;
+}
+
+#footer {
+	text-indent: 0px;
+	font-size: 12px;
+}
+
+li {
+	margin: 8px 0 0;
+}
+
+	</style>
+</head>
+
+<body>
+	<div id="page">
+		<div id="page-inner">
+			<h1 class="keyline-bottom">The bite of the knife</h1>
+			<div id="text">
+				<p>A recent encounter with a six-bladed chopping tool that would have been used for food preparation in a Victorian kitchen got me thinking about cutting tools and the human need to render our food into small enough pieces to handle and manoeuvre. Sure, nature provides some foods in handy bite-sized pieces (berries, nuts, eggs) but for most foodstuffs (say, the carcass of a deer) it is necessary to chop them down to cookable, serveable size. And that means <em id="img-cutting-tools"><span>cutting tools</span><img src="images/cutting_tools.png"/></em>.</p>
+
+				<p>The history of human development is also the history of cutting tools; from the first <em id="img-stone-axe"><span>stone hand-axes</span><img src="images/hand_axe.png"></em> crafted with care by our earliest ancestors (for instance the beautiful example found in 120 million year old deposits in Olduvai Gorge, Tanzania) through the discovery of iron, steel, the mechanization of the industrial revolution and to today. These technical innovations go hand-in-hand with changes in cultural conventions of cutting and eating food – in the Western world, the <em id="img-forks"><span>fork</span><img src="images/forks.png"></em> was thought a ridiculous and overly-fastidious way of carrying food to the mouth until surprisingly recently. Forks were regarded with suspicion right into the middle of the eighteenth century, it being more polite before this point to simply use the hands, a knife and a spoon to transport food to mouth. This shift in table manners coincided with the spread of the blunt table knife, before which each diner had used their own personal all-purpose knife, sharp and versatile enough to peel apples, cut meat and spear cheese.</p>
+
+				<p>So much for the development of our modern way of eating. But what of the mouths into which these knives and forks were carrying food, and the teeth that chewed it? We are used to considering a ‘normal’ alignment of <em id="img-teeth"><span>teeth</span><img src="images/teeth.png"></em> one in which the front row of the top teeth slightly overhangs those of the bottom row – a gentle overbite that means that the incisors protrude a little from the line. But careful investigation of the teeth of skeletons shows that this has only been ‘normal’ in the Western world for the last 250 years or so. Before this point, most human beings had an edge-to-edge bite where the teeth meet in a straight line, similar to that of apes or the surviving Neanderthal skeletons that have been unearthed. What changed, and why? </p>
+
+				<p>This was a question that interested American anthropologist Professor Charles Loring Brace (1930–), who in the 1960s set out to settle the question of how the overbite had emerged. Over many years of analysis of the jaw alignment in skeletons, Brace arrived at a startling conclusion: it was the use of the knife and fork to cut food into bite-sized pieces that had caused this change. It was no longer the custom to wrench meat and other foods from a larger chunk held in the <em id="img-hands"><span>hands</span><img src="images/hands.png"></em>, and the bluntening of knives had made it necessary to have softer foods, resulting in even less chewing. This had immediate impact on the development of the teeth, and explained why the overbite emerged first in what Brace called ‘high-status individuals’.</p>
+
+				<p>But what of cultures that do not use a knife and fork? In China it has been the cultural norm to use <em id="img-chopsticks"><span>chopsticks</span><img src="images/chopsticks.png"></em> to eat small pieces of food that have already been chopped down to size in the kitchen. Many years later, on a research quest to Shanghai, Brace came across the preserved remains of a scholar who had lived and died in the Song dynasty (AD 960–1279), by which time chopstick use had become widespread in China. And there he found it: ‘the deep overbite of the modern Chinese’. Further investigation revealed that, apart from among the peasant classes, the overbite had become normal in China around 800-1,000 years before Europe.</p>
+
+				<p>And so, without our noticing, the ways in which we cut and eat have had an impact on much more than table manners. We like to think, as human beings, that we shape our tools, and that’s what makes us different, but maybe the real difference is much more about how our tools shape us.</p>
+			</div>
+			<div id="footer">
+				<em class="keyline-top">Further reading:</em>
+				<ul>
+					<li><em><a href="http://www.considerthefork.com/">Consider The Fork</a></em>, Bee Wilson</li>
+					<li><em><a href="http://www.bbc.co.uk/programmes/b00pwn7p">A History of the World in 100 Objects</a></em>, Olduvai Hand Axe, Neil Macgregor</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html> 
